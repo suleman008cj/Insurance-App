@@ -1,0 +1,168 @@
+/* Custom theme: warm stone + deep teal + copper accent. Font: Outfit */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --app-font: 'Outfit', system-ui, sans-serif;
+  --sidebar-bg: #0f2d38;
+  --sidebar-text: #b8d4de;
+  --sidebar-active: #e8a85c;
+  --content-bg: #f4efe6;
+  --card-bg: #fffcf7;
+  --card-border: #e8e0d4;
+  --text-primary: #2d3438;
+  --text-muted: #6b7a82;
+  --accent: #c45c3e;
+  --accent-hover: #a84d32;
+  --success: #2d7a5e;
+  --warning: #b8860b;
+  --danger: #b83d3d;
+  --info: #2d5a7b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--app-font);
+  background: var(--content-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Bootstrap overrides */
+.btn-primary {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+.btn-primary:hover {
+  background-color: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+}
+
+.btn-outline-primary {
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--accent) !important;
+  color: #fff !important;
+}
+
+.breadcrumb-item a {
+  color: var(--accent);
+}
+.breadcrumb-item.active {
+  color: var(--text-muted);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--accent) !important;
+}
+
+.table thead th {
+  font-family: var(--app-font);
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom-color: var(--card-border) !important;
+}
+
+.card {
+  border-color: var(--card-border) !important;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(45, 52, 56, 0.06);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(196, 92, 62, 0.2);
+}
+
+/* Status badges – custom palette */
+.bg-draft { background-color: #8b9cad !important; color: #fff !important; }
+.bg-active { background-color: var(--success) !important; color: #fff !important; }
+.bg-suspended { background-color: var(--warning) !important; color: #fff !important; }
+.bg-expired { background-color: var(--danger) !important; color: #fff !important; }
+.bg-submitted { background-color: #5a6b8a !important; color: #fff !important; }
+.bg-in_review { background-color: var(--warning) !important; color: #fff !important; }
+.bg-approved { background-color: var(--success) !important; color: #fff !important; }
+.bg-rejected { background-color: var(--danger) !important; color: #fff !important; }
+.bg-settled { background-color: #6b7a82 !important; color: #fff !important; }
+
+/* App shell */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar-wrap {
+  width: 260px;
+  min-height: 100vh;
+  background: var(--sidebar-bg);
+  padding: 1.25rem 0;
+}
+
+.sidebar-brand {
+  padding: 0 1.25rem 1.25rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-nav .nav-link {
+  color: var(--sidebar-text);
+  font-weight: 500;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0 10px 10px 0;
+  margin-right: 0.75rem;
+}
+.sidebar-nav .nav-link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+.sidebar-nav .nav-link.active {
+  color: var(--sidebar-active);
+  background: rgba(232, 168, 92, 0.15);
+}
+
+.main-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.content-wrap {
+  flex: 1;
+  padding: 1.5rem;
+  overflow: auto;
+}
+
+.page-heading {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.progress-bar {
+  background-color: var(--accent) !important;
+}
+
+.content-wrap .spinner-border {
+  color: var(--accent);
+}
